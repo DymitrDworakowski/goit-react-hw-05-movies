@@ -31,7 +31,7 @@ const Home = () => {
       <h1>Trending today</h1>
       <EditorList films={films} />
 
-      {loading }
+      {loading && "loading..." }
     </main>
   );
 };

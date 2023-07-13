@@ -29,7 +29,7 @@ const Cast = () => {
 
   return (
     <div>
-      {loading }
+      {loading && "loading..."}
 
       <List>
         {actors.map(({ id, profile_path, original_name, name, character }) => (

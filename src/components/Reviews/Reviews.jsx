@@ -29,7 +29,7 @@ const Reviews = () => {
 
   return (
     <>
-      {loading }
+      {loading && "loading..."}
       {reviews.length !== 0 && (
         <div>
           <List>
