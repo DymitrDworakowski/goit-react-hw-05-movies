@@ -1,4 +1,5 @@
 import { useEffect, useState } from 'react';
+import { useRef } from 'react';
 import { useParams, Link, Outlet, useLocation } from 'react-router-dom';
 import { fetchMovieDetails } from 'services/TmbdApi';
 
@@ -15,6 +16,8 @@ const MovieDetails = () => {
   const [movieInfo, setMovieInfo] = useState(null);
   const [loading, setLoading] = useState(false);
   const location = useLocation();
+
+  const backlink = useRef(location.state?.from ?? '/');
 
   useEffect(() => {
     const fetchMovieDetailsFilms = () => {
@@ -51,7 +54,7 @@ const MovieDetails = () => {
 
   return (
     <>
-      <Link to={location.state?.from ?? '/'}>
+      <Link to={backlink.current}>
         <Button type="button">Go back</Button>
       </Link>
       {loading && "loading..." }

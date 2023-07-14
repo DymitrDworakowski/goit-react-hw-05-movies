@@ -1,5 +1,5 @@
 import { lazy } from 'react';
-
+import { Navigate } from 'react-router-dom';
 import { Route, Routes } from 'react-router-dom';
 import { Layout } from 'components/Layout/Layout';
 
@@ -23,7 +23,7 @@ const App = () => {
           <Route path="/movies/:movieId/reviews" element={<Reviews />} />
         </Route>
 
-        <Route path="*" element={<Home />} />
+        <Route path="*" element={<Navigate to="/*" />} />
       </Route>
     </Routes>
   );
